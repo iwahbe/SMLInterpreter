@@ -361,7 +361,7 @@ std::shared_ptr<SMLValue> eval(Environment env, std::shared_ptr<AstNode> last)
     else if (ast->label() == Label::Print) {
       std::shared_ptr<SMLValue> tv;
       tv = eval(env, ast->get(0));
-      std::cout << tv->to_string();
+      std::cout << tv->to_string()+"\n";
       return SMLUnit::New();
     }
     else if (ast->label() == Label::Not) {
